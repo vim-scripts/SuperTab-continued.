@@ -2,33 +2,50 @@
 "   Original: Gergely Kontra <kgergely@mcl.hu>
 "   Current:  Eric Van Dewoestine <ervandew@yahoo.com> (as of version 0.4)
 "   Please direct all correspondence to Eric.
-" Version: 0.42
+" Version: 0.43
 "
 " Description: {{{
 "   Use your tab key to do all your completion in insert mode!
 "   You can cycle forward and backward with the <Tab> and <S-Tab> keys
 "   (<S-Tab> will not work in the console version)
 "   Note: you must press <Tab> once to be able to cycle back
-" History:
-"   0.42 Added g:SuperTabMidWordCompletion variable to determine if completion
-"        should be done within a word (enabled by default).  (based on request
-"        by Charles Gruenwald)
-"        Applied patch to fix <s-tab> cycling through completion results
-"        (submitted by Lukasz Krotowski)
-"   0.41 Fixed couple bugs introduced in last version.
-"   0.4  Added the following functionality
-"        - support for vim 7 omni, user, and spelling completion modes
-"          (should be backwards compatible with vim 6.x).
-"        - command :SuperTabHelp which opens a window with available
-"          completion types that the user can choose from.
-"        - variable g:SuperTabRetainCompletionType setting for determining if
-"          and for how long to retain completion type.
-"        - variable g:SuperTabDefaultCompletionType for determining the
-"          user's preferred default completion type.
-"   0.32 Corrected tab-insertion/completing decision (thx to: Lorenz Wegener)
-"   0.31 Added <S-Tab> for backward cycling. (req by: Peter Chun)
-"   0.3  Back to the roots. Autocompletion is another story...
-"        Now the prompt appears, when showmode is on
+" }}}
+"
+" License: {{{
+"   Software License Agreement (BSD License)
+"
+"   Copyright (c) 2002 - 2007
+"   All rights reserved.
+"
+"   Redistribution and use of this software in source and binary forms, with
+"   or without modification, are permitted provided that the following
+"   conditions are met:
+"
+"   * Redistributions of source code must retain the above
+"     copyright notice, this list of conditions and the
+"     following disclaimer.
+"
+"   * Redistributions in binary form must reproduce the above
+"     copyright notice, this list of conditions and the
+"     following disclaimer in the documentation and/or other
+"     materials provided with the distribution.
+"
+"   * Neither the name of Gergely Kontra or Eric Van Dewoestine nor the names
+"   of its contributors may be used to endorse or promote products derived
+"   from this software without specific prior written permission of Gergely
+"   Kontra or Eric Van Dewoestine.
+"
+"   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+"   IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+"   THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+"   PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+"   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+"   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+"   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+"   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+"   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+"   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+"   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 " }}}
 
 if !exists('complType') "Integration with other completion functions.
