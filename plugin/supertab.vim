@@ -2,7 +2,7 @@
 "   Original: Gergely Kontra <kgergely@mcl.hu>
 "   Current:  Eric Van Dewoestine <ervandew@yahoo.com> (as of version 0.4)
 "   Please direct all correspondence to Eric.
-" Version: 0.44
+" Version: 0.45
 "
 " Description: {{{
 "   Use your tab key to do all your completion in insert mode!
@@ -215,6 +215,8 @@ function! s:Init ()
     autocmd!
     autocmd BufEnter * call <SID>InitBuffer()
   augroup END
+  " ensure InitBuffer gets called for the first buffer.
+  call s:InitBuffer()
 
   " Setup mechanism to restore orignial completion type upon leaving insert
   " mode if g:SuperTabRetainCompletionType == 2
