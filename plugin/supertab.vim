@@ -722,6 +722,14 @@ endfunction " }}}
       return a:cr ? "\<cr>" : ""
     endfunction
   endif
+
+  " If the tab literal is the tab key, remove any tab mapping we might have
+  " set up.  This allows tab completion on other keys combinations to work 
+  " properly in console vim.
+  if g:SuperTabMappingTabLiteral == '<tab>'
+    iunmap <tab>
+  endif
+  
 " }}}
 
 " Command Mappings {{{
